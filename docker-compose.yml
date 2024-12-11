@@ -1,0 +1,17 @@
+version: '2.27.1'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: globant_docker
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: jaba
+      POSTGRES_PASSWORD: jaba123
+      POSTGRES_DB: globant_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
